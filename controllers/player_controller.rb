@@ -66,4 +66,10 @@ class PlayerController < Sinatra::Base
 		redirect "/players/#{id}"  
 	end
 
+	delete '/players/:id' do
+		id = params[:id].to_i
+		$players.delete_at(id)
+		redirect '/players'
+	end
+
 end
