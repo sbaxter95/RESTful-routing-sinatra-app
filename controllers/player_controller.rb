@@ -38,6 +38,12 @@ class PlayerController < Sinatra::Base
 	  erb :"players/new"
 	end
 
+	get '/players/:id' do
+		@id = params[:id].to_i
+		@player = $players[@id]
+	  erb :"players/show"
+	end
+
 	post '/players' do
 		@data = params
 		$players.push(@data)		
