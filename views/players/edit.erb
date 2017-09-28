@@ -1,0 +1,19 @@
+<form action="/players/<%= @id %>" method="POST">
+
+	<label for="Player">Player: </label>
+	<input type="text" name="Player" value="<%= @player[:Player] %>">
+
+	<label for="Position">Position: </label>
+	<input type="text" name="Position" value="<%= @player[:Position] %>">
+
+	<label for="Team">Team: </label>
+	<input type="text" name="Team" value="<%= @player[:Team] %>">
+
+	<label for="Status">Status: </label>
+	<input type="text" name="Status" value="<%= @player[:Status] %>">	
+  
+
+  <input type="hidden" name="_method" value="PUT">
+
+  <input type="submit" value="Update">
+</form>

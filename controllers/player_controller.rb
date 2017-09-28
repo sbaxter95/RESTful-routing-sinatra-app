@@ -50,4 +50,20 @@ class PlayerController < Sinatra::Base
 		redirect '/players'
 	end
 
+	get '/players/:id/edit' do
+		@id = params[:id].to_i
+		@player = $players[@id]
+	  erb :"players/edit"
+	end
+
+	put '/players/:id' do
+		id = params[:id].to_i
+		$players[id][:Player] = params[:Player]
+		$players[id][:Position] = params[:Position]
+		$players[id][:Team] = params[:Team]
+		$players[id][:Status] = params[:Status]
+
+		redirect "/players/#{id}"  
+	end
+
 end
