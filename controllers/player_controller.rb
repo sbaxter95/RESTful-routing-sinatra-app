@@ -38,4 +38,10 @@ class PlayerController < Sinatra::Base
 	  erb :"players/new"
 	end
 
+	post '/players' do
+		@data = params
+		$players.push(@data)		
+		redirect '/players'
+	end
+
 end
