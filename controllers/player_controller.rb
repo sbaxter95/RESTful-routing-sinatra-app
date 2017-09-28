@@ -34,4 +34,8 @@ class PlayerController < Sinatra::Base
 	  	erb :"players/index"
 	end
 
+	get '/players/new' do
+	  erb :"players/new"
+	end
+
 end
