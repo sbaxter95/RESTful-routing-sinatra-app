@@ -1,0 +1,10 @@
+<h1>Players</h1>
+
+<% @players.each do |player| %>
+<h3>Player: <%= player[:Player]%></h3>
+<h3>Position: <%= player[:Position]%></h3>
+<h3>Team: <%= player[:Team]%></h3>
+<h3>Status: <%= player[:Status]%></h3>
+<hr>
+
+<% end %>
